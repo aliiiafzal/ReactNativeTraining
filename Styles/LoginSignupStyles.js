@@ -10,6 +10,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 40,
+    //fontFamily: 'Roboto-Italic',
   },
   text: {
     textAlign: 'center',

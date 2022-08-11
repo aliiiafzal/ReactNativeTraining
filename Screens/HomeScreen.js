@@ -9,6 +9,7 @@ import React from 'react';
 import styles from '../Styles/HomeScreenStyles';
 import {StackNavigator} from 'react-navigation';
 import {useNavigation} from '@react-navigation/native';
+import TabDrawer from '../Components/TabDrawer';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -69,6 +70,8 @@ const HomeScreen = () => {
           <Text style={styles.buttontext}> Comedy</Text>
         </TouchableOpacity>
       </View>
+
+      {/* <TabDrawer /> */}
     </View>
   );
 };

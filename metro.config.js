@@ -5,6 +5,17 @@
  * @format
  */
 
+// module.exports = {
+//   transformer: {
+//     getTransformOptions: async () => ({
+//       transform: {
+//         experimentalImportSupport: false,
+//         inlineRequires: true,
+//       },
+//     }),
+//   },
+// };
+
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
@@ -14,4 +25,13 @@ module.exports = {
       },
     }),
   },
+  //added this
+  resolver: {
+    sourceExts: ['jsx', 'js', 'ts', 'tsx', 'cjs'],
+  },
+  project: {
+    ios: {},
+    android: {}, // grouped into "project"
+  },
+  assets: ['./assets/Fonts/'], // stays the same
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Task1 from './Components/Task1';
@@ -12,16 +12,33 @@ import Lollywood from './Screens/Lollywood';
 import RandomNo from './Components/RandomNo';
 import Task4 from './Components/Task4';
 import DimensionScreen from './Screens/DimensionScreen';
-import Login from './Screens/Login';
 import Signup from './Screens/Signup';
+import Login from './Screens/Login';
+import GridScreen from './Screens/GridScreen';
+import PushPopReplace from './Components/PushPopReplace';
+import TabDrawer from './Components/TabDrawer';
+import SideDrawer from './Components/SideDrawer';
+import ReactRedux from './Components/ReactRedux';
+import Check from './Components/Check';
+import Movies_Api_Redux from './Components/Movies_Api_Redux';
+import AddPost from './Components/Add_Post';
+import EditPost from './Components/Edit_Post';
+import Users_Redux_Saga from './Components/Users_Redux_Saga';
+import MapScreen from './Screens/MapScreen';
+import MapTask from './Components/MapTask';
+import ImageScreen from './Screens/ImageScreen';
+import DocumentScreen from './Screens/DocumentScreen';
+import QRScanScreen from './Screens/QRScanScreen';
+import store from './Redux/Store';
+import {Provider} from 'react-redux';
 
 const App = () => {
-  const name = 'I am data from App.js';
   const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        {/* <Stack.Screen
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          {/* <Stack.Screen
           name="task1"
           component={Task1}
           options={{title: 'Task 1'}}
@@ -35,13 +52,14 @@ const App = () => {
           name="task3"
           component={Task3}
           options={{title: 'Task 3'}}
-        />
-        <Stack.Screen
+           initialParams={{data: 'I am data from App.js'}}
+        /> */}
+          {/* <Stack.Screen
           name="homescreen"
           component={HomeScreen}
           options={{title: 'Welcome'}}
-        />
-        <Stack.Screen
+        /> */}
+          {/* <Stack.Screen
           name="hollywood"
           component={Hollywood}
           options={{title: 'Hollywood'}}
@@ -56,7 +74,7 @@ const App = () => {
           component={Lollywood}
           options={{title: 'Lollywood'}}
         /> */}
-        {/* <Stack.Screen
+          {/* <Stack.Screen
           name="randomno"
           component={RandomNo}
           options={{title: 'Number Guessing Game'}}
@@ -66,29 +84,156 @@ const App = () => {
           component={Task4}
           options={{title: 'Play With Images'}}
         /> */}
-        <Stack.Screen
+          {/* <Stack.Screen
           name="dimensionscreen"
           component={DimensionScreen}
           options={{title: 'Dimension Screen'}}
+        /> */}
+          {/* <Stack.Screen
+            name="signup"
+            component={Signup}
+            options={{title: 'Signup Screen'}}
+          /> */}
+          {/* <Stack.Screen
+            name="login"
+            component={Login}
+            options={{title: 'Login Screen'}}
+          /> */}
+          {/* <Stack.Screen
+          name="gridscreen"
+          component={GridScreen}
+          options={{
+            title: 'Grid Screen',
+            headerStyle: {
+              backgroundColor: 'lightblue',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerRight: () => (
+              <Button
+                onPress={() => alert('Profile Button pressed!')}
+                title="Profile"
+                color="#fff"
+              />
+            ),
+          }}
         />
         <Stack.Screen
-          name="login"
-          component={Login}
-          options={{title: 'Login Screen'}}
+          name="pushpopreplace"
+          component={PushPopReplace}
+          options={{
+            title: 'Push Pop Replace Screen',
+          }}
         />
         <Stack.Screen
-          name="signup"
-          component={Signup}
-          options={{title: 'Signup Screen'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+          name="tabdrawer"
+          component={TabDrawer}
+          options={{
+            title: 'Tab Drawer',
+          }}
+        /> */}
 
-    //<Task1 />
-    //<Task2 />
-    // <Task3 data={name} />
-    //<HomeScreen />
-    //<Hollywood />
+          {/* <Stack.Screen
+            name="sidedrawer"
+            component={SideDrawer}
+            options={{
+              title: 'Side Drawer',
+            }}
+            initialParams={{name: 'I am from App.js'}}
+          /> */}
+
+          {/* <Stack.Screen
+            name="reactredux"
+            component={ReactRedux}
+            options={{
+              title: 'React Redux',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="check"
+            component={Check}
+            options={{
+              title: 'Check Redux State',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="moviesapiredux"
+            component={Movies_Api_Redux}
+            options={{
+              title: 'Movies API Redux',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="addpost"
+            component={AddPost}
+            options={{
+              title: 'Add Posts',
+            }}
+          />
+
+          <Stack.Screen
+            name="editpost"
+            component={EditPost}
+            options={{
+              title: 'Edit Posts',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="usersreduxsaga"
+            component={Users_Redux_Saga}
+            options={{
+              title: 'Users Regux Saga',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="mapscreen"
+            component={MapScreen}
+            options={{
+              title: 'Map Screen',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="maptask"
+            component={MapTask}
+            options={{
+              title: 'Map Task',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="imagescreen"
+            component={ImageScreen}
+            options={{
+              title: 'Image Screen',
+            }}
+          /> */}
+
+          {/* <Stack.Screen
+            name="documentscreen"
+            component={DocumentScreen}
+            options={{
+              title: 'Document Picker Screen',
+            }}
+          /> */}
+
+          <Stack.Screen
+            name="qrscanscreen"
+            component={QRScanScreen}
+            options={{
+              title: 'QR Code Scan Screen',
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
